@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <title>Edukasi tentang Demensia Alzheimer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">KA-DALZ</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="{{ url_for('tentang') }}"><i class="fas fa-info-circle"></i> Tentang</a></li>
+            <li><a href="{{ url_for('klasifikasi') }}"><i class="fas fa-brain"></i> Klasifikasi</a></li>
+            <li><a href="{{ url_for('edukasi') }}"><i class="fas fa-book"></i> Edukasi</a></li>
+            <li><a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i> Register</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Edukasi tentang Demensia Alzheimer</h1>
+        <p>Pelajari lebih dalam mengenai penyakit Demensia Alzheimer untuk meningkatkan pemahaman dan kewaspadaan.</p>
+    </header>
+
+    <section class="content">
+        <article>
+            <h2>Apa itu Demensia Alzheimer?</h2>
+            <p>Demensia Alzheimer adalah penyakit neurodegeneratif progresif yang menyebabkan penurunan fungsi kognitif dan memori secara bertahap. Penyakit ini merupakan bentuk demensia yang paling umum dan terutama menyerang lansia.</p>
+        </article>
+
+        <article>
+            <h2>Gejala Awal</h2>
+            <ul>
+                <li>Kesulitan mengingat informasi baru</li>
+                <li>Kesulitan dalam merencanakan atau memecahkan masalah</li>
+                <li>Kesulitan menyelesaikan tugas sehari-hari</li>
+                <li>Kebingungan terhadap waktu atau tempat</li>
+                <li>Perubahan suasana hati dan kepribadian</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>Penyebab dan Faktor Risiko</h2>
+            <p>Penyebab pasti Demensia Alzheimer belum diketahui, tetapi diduga berkaitan dengan penumpukan protein abnormal di otak yang menyebabkan kematian sel saraf. Faktor risiko meliputi usia lanjut, riwayat keluarga, gaya hidup tidak sehat, serta kondisi medis seperti tekanan darah tinggi dan diabetes.</p>
+        </article>
+
+        <article>
+            <h2>Pencegahan</h2>
+            <p>Meskipun tidak ada cara pasti untuk mencegah Alzheimer, gaya hidup sehat dapat membantu menurunkan risiko, seperti:</p>
+            <ul>
+                <li>Mengonsumsi makanan sehat dan bergizi</li>
+                <li>Berolahraga secara teratur</li>
+                <li>Menjaga kesehatan mental dan sosial</li>
+                <li>Berhenti merokok dan membatasi konsumsi alkohol</li>
+                <li>Mengelola kondisi kesehatan kronis</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>Peran Aplikasi Ini</h2>
+            <p>Aplikasi KA-DALZ ini membantu pengguna untuk melakukan prediksi risiko Alzheimer secara dini dengan menggunakan data medis yang relevan. Dengan prediksi awal, diharapkan pengguna atau tenaga medis dapat mengambil tindakan pencegahan atau penanganan lebih cepat.</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sistem Klasifikasi Alzheimer - Dibuat untuk Skripsi</p>
+    </footer>
+</body>
+</html>

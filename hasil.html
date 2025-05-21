@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasil Klasifikasi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Alzheimer AI</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Beranda</a></li>
+            <li><a href="{{ url_for('tentang') }}">Tentang</a></li>
+            <li><a href="{{ url_for('klasifikasi') }}">Klasifikasi</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Hasil Klasifikasi Data</h1>
+    </header>
+
+    <section class="content">
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>Index Data</th>
+                <th>Hasil Prediksi</th>
+            </tr>
+            {% for index, prediksi in hasil %}
+            <tr>
+                <td>{{ index }}</td>
+                <td>{{ prediksi }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <br>
+        <a href="{{ url_for('klasifikasi') }}" class="btn">Klasifikasikan Data Lain</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sistem Klasifikasi Alzheimer - Dibuat untuk Skripsi</p>
+    </footer>
+</body>
+</html>

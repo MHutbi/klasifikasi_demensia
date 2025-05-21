@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <title>Klasifikasi Data - Alzheimer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Minimal styling untuk alert */
+        .alert {
+            padding: 12px 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        form label {
+            font-weight: bold;
+        }
+        form input, form select {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 15px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .prediction-result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+            font-weight: bold;
+        }
+        nav ul li a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">KA-DALZ</div>
+    <ul>
+        <li><a href="{{ url_for('home') }}"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a href="{{ url_for('tentang') }}"><i class="fas fa-info-circle"></i> Tentang</a></li>
+        <li><a href="{{ url_for('klasifikasi') }}"><i class="fas fa-brain"></i> Klasifikasi</a></li>
+        <li><a href="{{ url_for('edukasi') }}"><i class="fas fa-book"></i> Edukasi</a></li>
+        <li><a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i> Register</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <h1>Upload Data untuk Klasifikasi</h1>
+</header>
+
+<section class="content">
+    <h2>Form Input Data Prediksi Demensia</h2>
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('klasifikasi') }}" method="POST" novalidate>
+        <label for="age">Umur:</label><br />
+        <input
+            type="number"
+            id="age"
+            name="age"
+            required
+            min="1"
+            value="{{ form_data.age if form_data.age is defined else '' }}"
+        /><br />
+
+        <label for="gender">Jenis Kelamin:</label><br />
+        <select id="gender" name="gender" required>
+            <option value="">--Pilih--</option>
+            <option value="Male" {% if form_data.gender == 'Male' %}selected{% endif %}>Laki-laki</option>
+            <option value="Female" {% if form_data.gender == 'Female' %}selected{% endif %}>Perempuan</option>
+        </select><br />
+
+        <label for="education">Tingkat Pendidikan (tahun):</label><br />
+        <input
+            type="number"
+            id="education"
+            name="education"
+            required
+            min="0"
+            max="20"
+            value="{{ form_data.education if form_data.education is defined else '' }}"
+        /><br />
+
+        <label for="memory_loss">Kehilangan Memori:</label><br />
+        <select id="memory_loss" name="memory_loss" required>
+            <option value="">--Pilih--</option>
+            <option value="Yes" {% if form_data.memory_loss == 'Yes' %}selected{% endif %}>Ya</option>
+            <option value="No" {% if form_data.memory_loss == 'No' %}selected{% endif %}>Tidak</option>
+        </select><br />
+
+        <label for="brain_scan">Hasil Scan Otak:</label><br />
+        <select id="brain_scan" name="brain_scan" required>
+            <option value="">--Pilih--</option>
+            <option value="Yes" {% if form_data.brain_scan == 'Yes' %}selected{% endif %}>Ya</option>
+            <option value="No" {% if form_data.brain_scan == 'No' %}selected{% endif %}>Tidak</option>
+        </select><br />
+
+        <button type="submit" class="btn">Prediksi</button>
+    </form>
+
+    {% if prediction_text %}
+    <div class="prediction-result">
+        <h3>Hasil Prediksi:</h3>
+        <p>{{ prediction_text }}</p>
+    </div>
+    {% endif %}
+</section>
+
+<footer>
+    <p>&copy; Peduli Lansia - 2025 Sistem Klasifikasi Alzheimer - Dibuat untuk Skripsi</p>
+</footer>
+</body>
+</html>

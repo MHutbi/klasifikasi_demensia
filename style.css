@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+.navbar {
+    background-color: #4B0082;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    color: white;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.hero {
+    background-color: #6a0dad;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    gap: 20px;
+}
+
+.content .left {
+    width: 50%;
+}
+
+.content .right {
+    width: 50%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #080316;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: hsl(275, 91%, 58%);
+    color: rgb(238, 235, 240);
+    text-align: center;
+    padding: 10px;
+}
+/* Reset margin dan padding dasar */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: hwb(283 1% 63%);
+    color: #080808;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Bagian form */
+section.content {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(243, 5, 5, 0.1);
+}
+
+/* Judul form */
+section.content h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #4a90e2;
+}
+
+/* Label dan input */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+/* Fokus saat ketik */
+form input[type="number"]:focus,
+form select:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+/* Tombol */
+form .btn {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* Hover tombol */
+form .btn:hover {
+    background-color: #357ABD;
+}
+
+/* Pesan flash (opsional styling) */
+.flash-message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash-message.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.flash-message.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+.prediction-result {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #e6f7ff;
+    border-left: 5px solid #4a90e2;
+    border-radius: 6px;
+}
+
+.prediction-result h3 {
+    margin-top: 0;
+    color: #357ABD;
+}
+
+.prediction-result p {
+    font-size: 18px;
+    font-weight: bold;
+}
